@@ -156,7 +156,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="absolute bottom-8 left-0 right-0 mx-auto max-w-5xl px-4"
+          className="mb-10 bottom-8 left-0 right-0 mx-auto max-w-5xl px-4"
         >
           <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6 md:p-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">

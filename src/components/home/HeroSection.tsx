@@ -43,7 +43,7 @@ export function HeroSection() {
       </div>
 
       <div className="container-section relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+        <div className="grid lg:grid-cols-2 gap-12 items-center sm:min-h-[80vh] border border-red-500 pt-10 sm:pt-0">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -111,7 +111,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden lg:flex justify-center"
+            className="hidden lg:flex justify-center "
           >
             <div className="relative">
               {/* Glowing ring animation */}
@@ -156,7 +156,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mb-10 bottom-8 left-0 right-0 mx-auto max-w-5xl px-4"
+          className="mb-10 border border-red-500 mt-10 sm:mt-0  mx-auto max-w-5xl px-4"
         >
           <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6 md:p-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">

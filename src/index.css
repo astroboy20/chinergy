@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Professional Engineering Color Palette */
+    --background: 210 20% 98%;
+    --foreground: 215 35% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 35% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 35% 15%;
+
+    /* Deep Navy Blue - Primary Brand */
+    --primary: 212 55% 24%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light Blue-Gray - Secondary */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 212 55% 24%;
+
+    --muted: 210 15% 93%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Orange Accent - From Logo Flame */
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 212 55% 24%;
+
+    --radius: 0.5rem;
+
+    /* Custom Colors */
+    --navy: 212 55% 24%;
+    --navy-dark: 212 60% 18%;
+    --navy-light: 212 40% 35%;
+    --orange: 24 95% 53%;
+    --orange-dark: 24 90% 45%;
+    --orange-light: 24 95% 65%;
+    --slate: 215 20% 65%;
+    --light-gray: 210 20% 98%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(212 55% 24%) 0%, hsl(212 60% 18%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(15 90% 50%) 100%);
+    --gradient-overlay: linear-gradient(180deg, rgba(30, 58, 95, 0.95) 0%, rgba(30, 58, 95, 0.85) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(30, 58, 95, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(30, 58, 95, 0.1), 0 2px 4px -1px rgba(30, 58, 95, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(30, 58, 95, 0.1), 0 4px 6px -2px rgba(30, 58, 95, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(30, 58, 95, 0.1), 0 10px 10px -5px rgba(30, 58, 95, 0.04);
+    --shadow-accent: 0 4px 14px 0 rgba(249, 115, 22, 0.25);
+
+    /* Sidebar (keeping defaults) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 35% 10%;
+    --foreground: 210 20% 98%;
+
+    --card: 215 35% 12%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 215 35% 12%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 30% 18%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 30% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 30% 20%;
+    --input: 215 30% 20%;
+    --ring: 24 95% 53%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .container-section {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .bg-navy-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .card-professional {
+    @apply bg-card rounded-lg border border-border p-6 transition-all duration-300;
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-professional:hover {
+    box-shadow: var(--shadow-xl);
+    @apply -translate-y-1;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-200;
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .btn-primary:hover {
+    @apply opacity-90;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-200;
+    background: var(--gradient-accent);
+    @apply text-accent-foreground;
+  }
+
+  .btn-accent:hover {
+    box-shadow: var(--shadow-accent);
+    @apply scale-[1.02];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-200;
+    @apply border-2 border-primary text-primary bg-transparent;
+  }
+
+  .btn-outline:hover {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300;
+    background: hsl(var(--accent));
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

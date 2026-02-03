@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
-import { Mail, Phone, Send, CheckCircle, Clock, MessageSquare } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  Send,
+  CheckCircle,
+  Clock,
+  MessageSquare,
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import heroBackground from "@/assets/hero-background.jpg";
 
@@ -15,13 +22,17 @@ const Contact = () => {
     phone: "",
     company: "",
     service: "",
-    message: ""
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -30,7 +41,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     setIsSubmitting(false);
     setIsSubmitted(true);
@@ -45,9 +56,9 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={heroBackground} 
-            alt="Energy infrastructure" 
+          <img
+            src={heroBackground}
+            alt="Energy infrastructure"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/75" />
@@ -59,19 +70,18 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="inline-block px-4 py-2 rounded-full bg-accent/20 border border-accent/30 text-accent font-medium text-sm tracking-wide uppercase mb-6"
             >
               Get In Touch
             </motion.span>
-            <h1 className="text-primary-foreground mb-6">
-              Contact Us
-            </h1>
+            <h1 className="text-primary-foreground mb-6">Contact Us</h1>
             <p className="text-primary-foreground/80 text-xl">
-              Ready to discuss your project? Reach out to our team for a consultation 
-              or to learn more about our engineering and procurement services.
+              Ready to discuss your project? Reach out to our team for a
+              consultation or to learn more about our engineering and
+              procurement services.
             </p>
           </motion.div>
         </div>
@@ -91,13 +101,13 @@ const Contact = () => {
             >
               <h2 className="text-2xl font-bold mb-6">Let's Talk</h2>
               <p className="text-muted-foreground mb-8 text-lg">
-                Have a question or need a quote? Contact us directly or fill out the form 
-                and we'll respond within 24-48 hours.
+                Have a question or need a quote? Contact us directly or fill out
+                the form and we'll respond within 24-48 hours.
               </p>
 
               <div className="space-y-6">
-                <motion.a 
-                  href="mailto:Chinedumoragui@gmail.com"
+                <motion.a
+                  href="mailto:chinergyengineering@gmail.com"
                   whileHover={{ scale: 1.02, x: 5 }}
                   className="flex items-start gap-4 p-4 rounded-xl bg-secondary border border-border hover:border-accent/30 transition-all group"
                 >
@@ -107,13 +117,13 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
                     <span className="text-muted-foreground group-hover:text-accent transition-colors">
-                      Chinedumoragui@gmail.com
+                      chinergyengineering@gmail.com
                     </span>
                   </div>
                 </motion.a>
 
-                <motion.a 
-                  href="tel:+19592000646"
+                <motion.a
+                  href="tel:+1 (860) 503-5585"
                   whileHover={{ scale: 1.02, x: 5 }}
                   className="flex items-start gap-4 p-4 rounded-xl bg-secondary border border-border hover:border-primary/30 transition-all group"
                 >
@@ -123,14 +133,14 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold mb-1">Phone</h4>
                     <span className="text-muted-foreground group-hover:text-primary transition-colors">
-                      (959) 200-0646
+                      +1 (860) 503-5585
                     </span>
                   </div>
                 </motion.a>
               </div>
 
               {/* Service Request Info */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -144,9 +154,10 @@ const Contact = () => {
                     <h4 className="font-semibold">Quick Response</h4>
                   </div>
                   <p className="text-sm text-primary-foreground/80">
-                    When contacting us, please include details about your project scope, 
-                    timeline, and any specific requirements. This helps us provide you 
-                    with accurate information and a timely response.
+                    When contacting us, please include details about your
+                    project scope, timeline, and any specific requirements. This
+                    helps us provide you with accurate information and a timely
+                    response.
                   </p>
                 </div>
               </motion.div>
@@ -162,12 +173,12 @@ const Contact = () => {
             >
               <div className="bg-card rounded-2xl p-8 md:p-10 border border-border shadow-xl">
                 {isSubmitted ? (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-12"
                   >
-                    <motion.div 
+                    <motion.div
                       className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6"
                       animate={{ scale: [1, 1.1, 1] }}
                       transition={{ duration: 0.5 }}
@@ -176,7 +187,8 @@ const Contact = () => {
                     </motion.div>
                     <h3 className="text-3xl font-bold mb-4">Thank You!</h3>
                     <p className="text-muted-foreground text-lg mb-8 max-w-md mx-auto">
-                      Your message has been received. We'll get back to you within 24-48 hours.
+                      Your message has been received. We'll get back to you
+                      within 24-48 hours.
                     </p>
                     <button
                       onClick={() => {
@@ -187,7 +199,7 @@ const Contact = () => {
                           phone: "",
                           company: "",
                           service: "",
-                          message: ""
+                          message: "",
                         });
                       }}
                       className="btn-outline"
@@ -202,14 +214,21 @@ const Contact = () => {
                         <MessageSquare className="h-6 w-6 text-accent" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold">Request a Consultation</h3>
-                        <p className="text-sm text-muted-foreground">Fill out the form below and we'll be in touch</p>
+                        <h3 className="text-xl font-bold">
+                          Request a Consultation
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Fill out the form below and we'll be in touch
+                        </p>
                       </div>
                     </div>
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div className="grid sm:grid-cols-2 gap-6">
                         <div>
-                          <label htmlFor="name" className="block text-sm font-semibold mb-2">
+                          <label
+                            htmlFor="name"
+                            className="block text-sm font-semibold mb-2"
+                          >
                             Full Name *
                           </label>
                           <input
@@ -224,7 +243,10 @@ const Contact = () => {
                           />
                         </div>
                         <div>
-                          <label htmlFor="email" className="block text-sm font-semibold mb-2">
+                          <label
+                            htmlFor="email"
+                            className="block text-sm font-semibold mb-2"
+                          >
                             Email Address *
                           </label>
                           <input
@@ -242,7 +264,10 @@ const Contact = () => {
 
                       <div className="grid sm:grid-cols-2 gap-6">
                         <div>
-                          <label htmlFor="phone" className="block text-sm font-semibold mb-2">
+                          <label
+                            htmlFor="phone"
+                            className="block text-sm font-semibold mb-2"
+                          >
                             Phone Number
                           </label>
                           <input
@@ -256,7 +281,10 @@ const Contact = () => {
                           />
                         </div>
                         <div>
-                          <label htmlFor="company" className="block text-sm font-semibold mb-2">
+                          <label
+                            htmlFor="company"
+                            className="block text-sm font-semibold mb-2"
+                          >
                             Company Name
                           </label>
                           <input
@@ -272,7 +300,10 @@ const Contact = () => {
                       </div>
 
                       <div>
-                        <label htmlFor="service" className="block text-sm font-semibold mb-2">
+                        <label
+                          htmlFor="service"
+                          className="block text-sm font-semibold mb-2"
+                        >
                           Service of Interest *
                         </label>
                         <select
@@ -284,15 +315,24 @@ const Contact = () => {
                           className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
                         >
                           <option value="">Select a service</option>
-                          <option value="procurement">Oil & Gas Procurement</option>
-                          <option value="electrical">Electrical Engineering</option>
-                          <option value="energy">Energy & Utility Consulting</option>
+                          <option value="procurement">
+                            Oil & Gas Procurement
+                          </option>
+                          <option value="electrical">
+                            Electrical Engineering
+                          </option>
+                          <option value="energy">
+                            Energy & Utility Consulting
+                          </option>
                           <option value="other">Other / General Inquiry</option>
                         </select>
                       </div>
 
                       <div>
-                        <label htmlFor="message" className="block text-sm font-semibold mb-2">
+                        <label
+                          htmlFor="message"
+                          className="block text-sm font-semibold mb-2"
+                        >
                           Project Details / Message *
                         </label>
                         <textarea
@@ -316,10 +356,14 @@ const Contact = () => {
                       >
                         {isSubmitting ? (
                           <>
-                            <motion.span 
+                            <motion.span
                               className="inline-block mr-2"
                               animate={{ rotate: 360 }}
-                              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                              transition={{
+                                duration: 1,
+                                repeat: Infinity,
+                                ease: "linear",
+                              }}
                             >
                               ⏳
                             </motion.span>

@@ -24,10 +24,18 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Chinergy Engineering Services" className="h-14 w-auto" />
+            <img
+              src={logo}
+              alt="Chinergy Engineering Services"
+              className="h-14 w-auto"
+            />
             <div className="hidden sm:block">
-              <span className="text-lg font-bold text-primary uppercase tracking-wide">Chinergy</span>
-              <span className="block text-xs text-muted-foreground font-medium">Engineering Services</span>
+              <span className="text-lg font-bold text-primary uppercase tracking-wide">
+                Chinergy
+              </span>
+              <span className="block text-xs text-muted-foreground font-medium">
+                Engineering Services
+              </span>
             </div>
           </Link>
 
@@ -51,11 +59,11 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:+19592000646"
+              href="tel:+1 (860) 503-5585"
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <Phone className="h-4 w-4" />
-              (959) 200-0646
+              +1 (860) 503-5585
             </a>
             <Link to="/contact" className="btn-accent text-sm">
               Get a Quote
@@ -68,7 +76,11 @@ export function Header() {
             className="lg:hidden p-2 text-foreground"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
       </div>
@@ -89,9 +101,7 @@ export function Header() {
                   to={link.path}
                   onClick={() => setIsMenuOpen(false)}
                   className={`text-base font-medium py-2 ${
-                    isActive(link.path)
-                      ? "text-accent"
-                      : "text-foreground"
+                    isActive(link.path) ? "text-accent" : "text-foreground"
                   }`}
                 >
                   {link.name}
@@ -99,11 +109,11 @@ export function Header() {
               ))}
               <div className="pt-4 border-t border-border">
                 <a
-                  href="tel:+19592000646"
+                  href="tel:+1 (860) 503-5585"
                   className="flex items-center gap-2 text-sm text-muted-foreground mb-4"
                 >
                   <Phone className="h-4 w-4" />
-                  (959) 200-0646
+                  +1 (860) 503-5585
                 </a>
                 <Link
                   to="/contact"

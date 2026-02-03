@@ -76,20 +76,20 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:Chinedumoragui@gmail.com"
+                  href="mailto:chinergyengineering@gmail.com"
                   className="flex items-start gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors"
                 >
                   <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                  <span>Chinedumoragui@gmail.com</span>
+                  <span>chinergyengineering@gmail.com</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+19592000646"
+                  href="tel:+1 (860) 503-5585"
                   className="flex items-start gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors"
                 >
                   <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                  <span>(959) 200-0646</span>
+                  <span>+1 (860) 503-5585</span>
                 </a>
               </li>
             </ul>
